@@ -1,0 +1,404 @@
+﻿"<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]--><!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]--><!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]--><!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]--><!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html lang="en" dir="ltr">
+<!--<![endif]-->
+<head>
+    
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="https://acpica.org/sites/all/themes/custom/acpica/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="shortlink" href="/node/41" />
+    <link rel="canonical" href="/downloads/binary-tools" />
+    <meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Windows Binary Tools | The ACPI Component Architecture Project</title>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width =device-width">    <!--[if IEMobile]><meta http-equiv="cleartype" content="on"><![endif]-->
+    <style>
+        @import url("https://acpica.org/modules/system/system.base.css?p7tt8z");
+    </style>
+    <style>
+        @import url("https://acpica.org/modules/book/book.css?p7tt8z");
+    </style>
+    <style media="screen">
+        @import url("https://acpica.org/sites/all/modules/contrib/codefilter/codefilter.css?p7tt8z");
+    </style>
+    <style>
+        @import url("https://acpica.org/modules/comment/comment.css?p7tt8z");@import url("https://acpica.org/sites/all/modules/contrib/date/date_api/date.css?p7tt8z");@import url("https://acpica.org/sites/all/modules/contrib/date/date_popup/themes/datepicker.1.7.css?p7tt8z");@import url("https://acpica.org/modules/field/theme/field.css?p7tt8z");@import url("https://acpica.org/sites/all/modules/contrib/logintoboggan/logintoboggan.css?p7tt8z");@import url("https://acpica.org/sites/all/modules/contrib/mollom/mollom.css?p7tt8z");@import url("https://acpica.org/modules/node/node.css?p7tt8z");@import url("https://acpica.org/modules/search/search.css?p7tt8z");@import url("https://acpica.org/modules/user/user.css?p7tt8z");@import url("https://acpica.org/sites/all/modules/contrib/calendar/css/calendar_multiday.css?p7tt8z");@import url("https://acpica.org/sites/all/modules/contrib/extlink/extlink.css?p7tt8z");@import url("https://acpica.org/sites/all/modules/contrib/views/css/views.css?p7tt8z");
+    </style>
+    <style>
+        @import url("https://acpica.org/sites/all/modules/contrib/ctools/css/ctools.css?p7tt8z");@import url("https://acpica.org/sites/all/modules/contrib/print/print_ui/css/print_ui.theme.css?p7tt8z");
+    </style>
+    <style>
+        @import url("https://acpica.org/sites/all/themes/custom/acpica/css/layout.css?p7tt8z");@import url("https://acpica.org/sites/all/themes/custom/acpica/css/html-elements.css?p7tt8z");@import url("https://acpica.org/sites/all/themes/custom/acpica/css/tabs.css?p7tt8z");@import url("https://acpica.org/sites/all/themes/custom/acpica/css/master.css?p7tt8z");@import url("https://acpica.org/sites/all/themes/custom/acpica/css/forms.css?p7tt8z");@import url("https://acpica.org/sites/all/themes/custom/acpica/css/imce-content.css?p7tt8z");@import url("https://acpica.org/sites/all/themes/custom/acpica/css/acpica.css?p7tt8z");
+    </style>
+    <style media="print">
+        @import url("https://acpica.org/sites/all/themes/custom/acpica/css/print.css?p7tt8z");
+    </style>
+    <script src="https://acpica.org/sites/acpica/files/js/js_vDrW3Ry_4gtSYaLsh77lWhWjIC6ml2QNkcfvfP5CVFs.js" />
+    <script src="https://acpica.org/sites/acpica/files/js/js__lcCtTEl5cM9HJE6S2wmzFwl_tLIHZ6q4zajiUmvT8M.js" />
+    <script src="https://acpica.org/sites/acpica/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js" />
+    <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-8768382-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+    <script src="https://acpica.org/sites/acpica/files/js/js_N8UPPAtuLhhJuZGu7TC20X3ar7iv69OYxZJ3SXgHFp4.js" />
+    <script>jQuery.extend(Drupal.settings, {"basePath":"\\/","pathPrefix":"","ajaxPageState":{"theme":"acpica","theme_token":"ssFiE4bUnPABDMJxb8oc6FwQP7v8z7gxjRSDKN8ptmU","js":{"misc\\/jquery.js":1,"misc\\/jquery.once.js":1,"misc\\/drupal.js":1,"sites\\/all\\/modules\\/contrib\\/codefilter\\/codefilter.js":1,"sites\\/all\\/modules\\/contrib\\/extlink\\/extlink.js":1,"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js":1,"0":1,"sites\\/all\\/themes\\/custom\\/acpica\\/js\\/script.js":1},"css":{"modules\\/system\\/system.base.css":1,"modules\\/system\\/system.menus.css":1,"modules\\/system\\/system.messages.css":1,"modules\\/system\\/system.theme.css":1,"modules\\/book\\/book.css":1,"sites\\/all\\/modules\\/contrib\\/codefilter\\/codefilter.css":1,"modules\\/comment\\/comment.css":1,"sites\\/all\\/modules\\/contrib\\/date\\/date_api\\/date.css":1,"sites\\/all\\/modules\\/contrib\\/date\\/date_popup\\/themes\\/datepicker.1.7.css":1,"modules\\/field\\/theme\\/field.css":1,"sites\\/all\\/modules\\/contrib\\/logintoboggan\\/logintoboggan.css":1,"sites\\/all\\/modules\\/contrib\\/mollom\\/mollom.css":1,"modules\\/node\\/node.css":1,"modules\\/search\\/search.css":1,"modules\\/user\\/user.css":1,"sites\\/all\\/modules\\/contrib\\/calendar\\/css\\/calendar_multiday.css":1,"sites\\/all\\/modules\\/contrib\\/extlink\\/extlink.css":1,"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css":1,"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css":1,"sites\\/all\\/modules\\/contrib\\/print\\/print_ui\\/css\\/print_ui.theme.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/system.menus.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/system.messages.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/system.theme.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/css\\/layout.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/css\\/html-elements.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/css\\/tabs.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/css\\/master.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/css\\/forms.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/css\\/imce-content.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/css\\/acpica.css":1,"sites\\/all\\/themes\\/custom\\/acpica\\/css\\/print.css":1}},"extlink":{"extTarget":0,"extClass":"ext","extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends e-mail)"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"currentPath":"node\\/41","currentPathIsAdmin":false,"urlIsAjaxTrusted":{"\\/downloads\\/binary-tools":true}});</script>      <!--[if lt IE 9]>    <script src="/sites/all/themes/zen/js/html5-respond.js"></script>    <![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-41 node-type-page section-downloads">
+          <p id="skip-link">      <a href="#main-menu" class="element-invisible element-focusable">Jump to navigation</a>    </p>        <div id="page">
+        <div id="page-inner">
+                <a name="top" id="navigation-top" />    <div id="skip-to-nav">
+                <a href="#navigation">Skip to Navigation</a>
+            </div>    <div id="header">
+                <div id="header-inner" class="clearfix">
+                            <div id="logo-title">
+                                    <div id="search-box">
+                            <div id="search-box-inner" class="clearfix">
+                                                              <div class="region region-search">
+                                        <div id="block-search-form" class="block block-search first last odd" role="search">
+                                                <form action="/downloads/binary-tools" method="post" id="search-block-form" accept-charset="UTF-8">
+                                            <div>
+                                                <div class="container-inline">
+                                                          <h2 class="element-invisible">Search form</h2>    <div class="form-item form-type-textfield form-item-search-block-form">  <label class="element-invisible" for="edit-search-block-form--2">Search </label> <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" /></div><div class="form-actions form-wrapper" id="edit-actions">
+                                                        <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" />
+                                                    </div>
+                                                    <input type="hidden" name="form_build_id" value="form-6p1Yh4NZl1JNmeJ-RwYZZQiyNZYhcy5dG-Bv3gFf6zo" /><input type="hidden" name="form_id" value="search_block_form" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>                            <div id="search-extra">
+                                    <div class="tabs">
+                                                            <div class="region region-search-extra">
+                                                <div id="block-menu-menu-loggedin" class="block block-menu first last odd" role="navigation">
+                                                        <ul class="menu">
+                                                    <li class="menu__item is-leaf first last leaf">
+                                                        <a href="/user/login" title="" class="menu__link">Login</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /#search-extra -->              
+                            </div>
+                        </div>
+                        <!-- /#search-box -->                      <div id='site-name'>              <a href="/" title="Home" rel="home">                <strong>The ACPI Component Architecture Project</strong>              </a>            </div>                
+                    </div>
+                    <!-- /#logo-title -->                    <div id="header-blocks" class="region region-header">
+                                    <div class="header__region region region-header">
+                                  <div class="header__region region region-header">
+                                    <div id="block-menu-block-3" class="block block-menu-block first last odd" role="navigation">
+                                            <div class="menu-block-wrapper menu-block-3 menu-name-main-menu parent-mlid-0 menu-level-1">
+                                          <ul class="menu">
+                                            <li class="menu__item is-leaf first leaf menu-mlid-581">
+                                                <a href="/" title="" class="menu__link">Home</a>
+                                            </li>
+                                            <li class="menu__item is-leaf is-parent leaf has-children menu-mlid-523">
+                                                <a href="/about" title="About ACPICA" class="menu__link">About</a>
+                                            </li>
+                                            <li class="menu__item is-leaf leaf menu-mlid-2685">
+                                                <a href="/Licensing" title="ACPICA Licensing" class="menu__link">Licensing</a>
+                                            </li>
+                                            <li class="menu__item is-leaf is-parent leaf has-children menu-mlid-1612">
+                                                <a href="/documentation" title="ACPICA Documentation" class="menu__link">Documentation</a>
+                                            </li>
+                                            <li class="menu__item is-leaf is-parent is-active-trail leaf has-children active-trail menu-mlid-579">
+                                                <a href="/downloads" title="Downloads" class="menu__link is-active-trail active-trail">Downloads</a>
+                                            </li>
+                                            <li class="menu__item is-leaf leaf menu-mlid-2268">
+                                                <a href="/source" title="ACPICA Source Code Tree" class="menu__link">Source</a>
+                                            </li>
+                                            <li class="menu__item is-leaf last leaf menu-mlid-2339">
+                                                <a href="/community" class="menu__link">Community</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /#header-blocks -->      
+                </div>
+            </div>
+            <!-- /#header-inner, /#header -->    <div id="main">
+                <div id="main-inner" class="clearfix with-navbar">
+                            <nav class="breadcrumb" role="navigation">
+                        <h2 class="element-invisible">You are here</h2>
+                        <ol>
+                            <li>
+                                <a href="/">Home</a> â€º
+                            </li>
+                            <li>
+                                <a href="/downloads" title="Downloads">Downloads</a> â€º
+                            </li>
+                        </ol>
+                    </nav>      <div id="content">
+                        <div id="content-inner">
+                                                                        <h1 class="title">Windows Binary Tools</h1>                                                          <div class="tabs clearfix" />                                                                    <article class="node-41 node node-page view-mode-full clearfix">
+                                      <header>
+                                                                    <p class="submitted">
+                                                            Submitted by root on <time pubdate datetime="2013-02-28T13:51:21-08:00">28 February, 2013 - 13:51</time>
+                                    </p>      
+                                </header>    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                                    <div class="field-items">
+                                        <div class="field-item even">
+                                            <p>
+                                                The current release of ACPICA is version <strong>20181003 </strong>
+                                                <br />See the changes.txt file for changes in this version.
+                                            </p><h3>Windows Binary Tools</h3><p>The Windows versions of the various tools are zipped in a single file that is available here:</p><p>
+                                                <a href="https://acpica.org/sites/acpica/files/iasl-win-20181003.zip">iASL compiler and Windows ACPI tools (ZIP 2.0 MB) </a>
+                                            </p><p>Major tools and utilities: </p><ul>
+                                                <li>iASL - ACPI Source Language Compiler, ACPI Table Compiler, and AML Disassembler</li>
+                                                <li>AcpiExec - Load ACPI tables and execute control methods from user space</li>
+                                                <li>AcpiDump - Obtain system ACPI tables and save in ASCII hex format</li>
+                                                <li>AcpiXtract - Extract binary ACPI tables from an ASCII acpidump</li>
+                                                <li>AcpiHelp - Help utility for ASL operators, AML opcodes, and ACPI Predefined Names</li>
+                                            </ul>
+                                            <p>Miscellaneous utilities: </p><ul>
+                                                <li>AcpiNames - Example utility that loads and displays the ACPI namespace</li>
+                                                <li>AcpiSrc - Convert ACPICA code to Linux format</li>
+                                                <li>AcpiBin - Miscellaneous manipulation of binary ACPI tables</li>
+                                            </ul>
+                                            <p>Documentation and Demo code: </p><ul>
+                                                <li>changes.txt - ACPICA release log file</li>
+                                                <li>aslcompiler.pdf - iASL user guide</li>
+                                                <li>badcode.asl - Demo ASL file containing iASL error detection examples</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>  <ul class="links inline">
+                                    <li class="print_html first last">
+                                        <a href="/print/41" title="Display a printer-friendly version of this page." class="print-page" rel="nofollow">Printer-friendly version</a>
+                                    </li>
+                                </ul>  
+                            </article>                                            <div class="feed-icons" />                                                          
+                        </div>
+                    </div>
+                    <!-- /#content-inner, /#content -->                          <div id="sidebar-right">
+                        <div id="sidebar-right-inner" class="region region-right">
+                                        <section class="region region-sidebar-second column sidebar">
+                                    <div id="block-menu-block-1" class="block block-menu-block first odd" role="navigation">
+                                            <h2 class="block__title block-title">
+                                        <a href="/downloads" title="Downloads" class="active-trail">Downloads</a>
+                                    </h2>      <div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-2">
+                                          <ul class="menu">
+                                            <li class="menu__item is-leaf first leaf menu-mlid-2269">
+                                                <a href="/downloads" title="" class="menu__link">UNIX Source Code</a>
+                                            </li>
+                                            <li class="menu__item is-leaf leaf menu-mlid-2270">
+                                                <a href="/downloads/linux" class="menu__link">Linux Support</a>
+                                            </li>
+                                            <li class="menu__item is-leaf leaf menu-mlid-2271">
+                                                <a href="/downloads/windows-source" class="menu__link">Windows Source Code</a>
+                                            </li>
+                                            <li class="menu__item is-leaf is-active-trail is-active leaf active-trail active menu-mlid-2272">
+                                                <a href="/downloads/binary-tools" class="menu__link is-active-trail active-trail active">Windows Binary Tools</a>
+                                            </li>
+                                            <li class="menu__item is-leaf leaf menu-mlid-2273">
+                                                <a href="/source" title="" class="menu__link">Source Code Tree</a>
+                                            </li>
+                                            <li class="menu__item is-leaf last leaf menu-mlid-4591">
+                                                <a href="/downloads/uefi-support" title="Unified Extensible Firmware Interface" class="menu__link">UEFI Support</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div><div id="block-views-releases-block-1" class="block block-views last even">
+                                            <h2 class="block__title block-title">Previous Releases</h2>      <div class="view view-Releases view-id-Releases view-display-id-block_1 clearfix view-dom-id-e6829ee8cbe7762178172b4dea15c0af">
+                                                          <div class="view-content">
+                                                    <h3>
+                                                <span class="date-display-single">2018</span>
+                                            </h3>  <div class="views-row views-row-1 views-row-odd views-row-first">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/161">Version 20181003</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-2 views-row-even">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/160">Version 20180927</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-3 views-row-odd">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/159">Version 20180810</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-4 views-row-even">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/158">Version 20180629</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-5 views-row-odd">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/157">Version 20180531</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-6 views-row-even">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/156">Version 20180508</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-7 views-row-odd">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/155">Version 20180427</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-8 views-row-even">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/154">Version 20180313</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-9 views-row-odd">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/153">Version 20180209</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-10 views-row-even views-row-last">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/152">Version 20180105</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <h3>
+                                                <span class="date-display-single">2017</span>
+                                            </h3>  <div class="views-row views-row-1 views-row-odd views-row-first">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/151">Version 20171215</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-2 views-row-even">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/150">Version 20171214</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-3 views-row-odd">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/147">Version 20171110</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-4 views-row-even">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/146">Version 20170929</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-5 views-row-odd">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/145">Version 20170831</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-6 views-row-even">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/144">Version 20170728</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-7 views-row-odd">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/143">Version 20170629</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-8 views-row-even">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/139">Version 20170531</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-9 views-row-odd">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/137">Version 20170303</a>
+                                                    </span>
+                                                </div>
+                                            </div>  <div class="views-row views-row-10 views-row-even views-row-last">
+                                                        <div class="views-field views-field-title">
+                                                    <span class="field-content">
+                                                        <a href="/node/136">Version 20170224</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>        <div class="item-list">
+                                            <ul class="pager">
+                                                <li class="pager-previous first">&nbsp;</li>
+                                                <li class="pager-current">1 of 4</li>
+                                                <li class="pager-next last">
+                                                    <a href="/downloads/binary-tools?page =1"> â€º</a>
+                                                </li>
+                                            </ul>
+                                        </div>          
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- /#sidebar-right-inner, /#sidebar-right -->      
+                </div>
+            </div>
+            <!-- /#main-inner, /#main -->    <div id="footer">
+                <div id="footer-inner" class="clearfix region region-footer">
+                          <div class="back-to-top">      </div>        <footer id="footer" class="region region-footer">
+                            <div id="block-menu-block-2" class="block block-menu-block first odd" role="navigation">
+                                    <div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-0 menu-level-1">
+                                  <ul class="menu">
+                                    <li class="menu__item is-leaf first leaf menu-mlid-581">
+                                        <a href="/" title="" class="menu__link">Home</a>
+                                    </li>
+                                    <li class="menu__item is-leaf is-parent leaf has-children menu-mlid-523">
+                                        <a href="/about" title="About ACPICA" class="menu__link">About</a>
+                                    </li>
+                                    <li class="menu__item is-leaf leaf menu-mlid-2685">
+                                        <a href="/Licensing" title="ACPICA Licensing" class="menu__link">Licensing</a>
+                                    </li>
+                                    <li class="menu__item is-leaf is-parent leaf has-children menu-mlid-1612">
+                                        <a href="/documentation" title="ACPICA Documentation" class="menu__link">Documentation</a>
+                                    </li>
+                                    <li class="menu__item is-leaf is-parent is-active-trail leaf has-children active-trail menu-mlid-579">
+                                        <a href="/downloads" title="Downloads" class="menu__link is-active-trail is-active-trail active-trail active-trail">Downloads</a>
+                                    </li>
+                                    <li class="menu__item is-leaf leaf menu-mlid-2268">
+                                        <a href="/source" title="ACPICA Source Code Tree" class="menu__link">Source</a>
+                                    </li>
+                                    <li class="menu__item is-leaf last leaf menu-mlid-2339">
+                                        <a href="/community" class="menu__link">Community</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><div id="block-menu-menu-rss-feeds" class="block block-menu even" role="navigation">
+                                    <ul class="rss">
+                                <li class="menu__item is-leaf first leaf">
+                                    <a href="/rss.xml" title="" class="menu__link">Site Feed</a>
+                                </li>
+                                <li class="menu__item is-leaf last leaf">
+                                    <a href="/blogs/feed" title="" class="menu__link">Blog Feed</a>
+                                </li>
+                            </ul>
+                        </div><div id="block-menu-menu-footer-menu" class="block block-menu last odd" role="navigation">
+                                    <ul class="menu">
+                                <li class="menu__item is-leaf first leaf">
+                                    <a href="/contact" title="" class="menu__link">Contact</a>
+                                </li>
+                                <li class="menu__item is-leaf last leaf">
+                                    <a href="/user/login" title="" class="menu__link">Login</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </footer>                <div id="footer-message" class="footer-message">        <p>Copyright &copy; 2018 Intel Corporation. All rights reserved. <br />*Other names and brands may be claimed as the property of others.</p>          <div>                  <div class="policy-links">                     <a href="https://01.org/about/privacy-policy">Privacy Policy</a>                  </div>                  <div class="policy-links">                      <a href="https://01.org/about/terms-service">Terms of Service</a>                 </div>          </div>      </div>      
+                </div>
+            </div>
+            <!-- /#footer-inner, /#footer -->
+        </div>
+    </div>
+    <!-- /#page-inner, /#page -->
+</body>
+</html>"

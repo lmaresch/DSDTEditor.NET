@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0220AC37-0146-4144-8EC5-16E0EF9602AB}</ProjectGuid>
+    <ProjectGuid>{7CDF82F9-81BE-47BE-8AA4-ED2F024397DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DSDTEditor.NET.Lib</RootNamespace>
-    <AssemblyName>DSDTEditor.NET.Lib</AssemblyName>
+    <RootNamespace>DSDTEditor.NET.Shared</RootNamespace>
+    <AssemblyName>DSDTEditor.NET.Shared</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,17 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckVersion.cs" />
-    <Compile Include="LinkFinder.cs" />
-    <Compile Include="LinkItem.cs" />
-    <Compile Include="LocalVersion.cs" />
+    <Compile Include="DSDTProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DSDTEditor.NET.Shared\DSDTEditor.NET.Shared.csproj">
-      <Project>{7cdf82f9-81be-47be-8aa4-ed2f024397da}</Project>
-      <Name>DSDTEditor.NET.Shared</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
