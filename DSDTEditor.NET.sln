@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSDTEditor.NET", "DSDTEditor.NET\DSDTEditor.NET.csproj", "{B5983BE5-C938-4AE0-A255-C496379EDB47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSDTEditor.NET.Lib", "DSDTEditor.NET.Lib\DSDTEditor.NET.Lib.csproj", "{0220AC37-0146-4144-8EC5-16E0EF9602AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5983BE5-C938-4AE0-A255-C496379EDB47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5983BE5-C938-4AE0-A255-C496379EDB47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5983BE5-C938-4AE0-A255-C496379EDB47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5983BE5-C938-4AE0-A255-C496379EDB47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0220AC37-0146-4144-8EC5-16E0EF9602AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0220AC37-0146-4144-8EC5-16E0EF9602AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0220AC37-0146-4144-8EC5-16E0EF9602AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0220AC37-0146-4144-8EC5-16E0EF9602AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A247F12C-41A2-4972-84F7-5F0F8E9EE3ED}
+	EndGlobalSection
+EndGlobal
