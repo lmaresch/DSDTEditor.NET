@@ -7,6 +7,7 @@ namespace DSDTEditor.NET.Lib
 {
     using DSDTEditor.NET.Shared;
     using System;
+    using System.IO;
     using System.Net;
 
     /// <summary>
@@ -14,15 +15,22 @@ namespace DSDTEditor.NET.Lib
     /// </summary>
     public class CheckVersion : DSDTProperty
     {
+        #region Fields
+
+        /// <summary>
+        /// Defines the downloadUri
+        /// </summary>
+        private Uri downloadUri;
+
+        /// <summary>
+        /// Defines the fileName
+        /// </summary>
+        private string fileName;
+
         /// <summary>
         /// Defines the uri
         /// </summary>
         private Uri uri;
-
-        /// <summary>
-        /// Defines the webClient
-        /// </summary>
-        private WebClient webClient;
 
         /// <summary>
         /// Defines the versionContent
@@ -35,14 +43,13 @@ namespace DSDTEditor.NET.Lib
         private string versionString;
 
         /// <summary>
-        /// Defines the downloadUri
+        /// Defines the webClient
         /// </summary>
-        private Uri downloadUri;
+        private WebClient webClient;
 
-        /// <summary>
-        /// Defines the fileName
-        /// </summary>
-        private string fileName;
+        #endregion
+
+        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckVersion"/> class.
@@ -66,15 +73,31 @@ namespace DSDTEditor.NET.Lib
             fileName = string.Empty;
         }
 
+        #endregion
+
+        #region Properties
+
         /// <summary>
-        /// The WebClient_DownloadStringCompleted
+        /// Gets or sets the DownloadUri
         /// </summary>
-        /// <param name="sender">The sender<see cref="object"/></param>
-        /// <param name="e">The e<see cref="DownloadStringCompletedEventArgs"/></param>
-        private void WebClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        public Uri DownloadUri { get => downloadUri; set => SetField(ref downloadUri, value); }
+
+        /// <summary>
+        /// Gets or sets the FileName
+        /// </summary>
+        public string FileName { get => fileName; set => SetField(ref fileName, value); }
+
+        /// <summary>
+        /// Gets the RemoteVersion
+        /// </summary>
+        public long RemoteVersion
         {
-            VersionContent = e.Result;
-            EvaluateHTML();
+            get
+            {
+                long version = 0;
+                long.TryParse(this.VersionString, out version);
+                return version;
+            }
         }
 
         /// <summary>
@@ -83,19 +106,13 @@ namespace DSDTEditor.NET.Lib
         public string VersionContent { get => versionContent; set => SetField(ref versionContent, value); }
 
         /// <summary>
-        /// Gets or sets the DownloadUri
-        /// </summary>
-        public Uri DownloadUri { get => downloadUri; set => SetField(ref downloadUri, value); }
-
-        /// <summary>
         /// Gets or sets the VersionString
         /// </summary>
         public string VersionString { get => versionString; set => SetField(ref versionString, value); }
 
-        /// <summary>
-        /// Gets or sets the FileName
-        /// </summary>
-        public string FileName { get => fileName; set => SetField(ref fileName, value); }
+        #endregion
+
+        #region Methods
 
         /// <summary>
         /// The EvaluateHTML
@@ -113,5 +130,25 @@ namespace DSDTEditor.NET.Lib
                 }
             }
         }
+
+        public void DownloadArchive(LocalVersion localVersion)
+        {
+            string outputFile = Path.Combine(localVersion.AcpicaFolder, this.FileName);
+            this.webClient.DownloadFile(this.DownloadUri, outputFile);
+            localVersion.AcpicaArchivePath = outputFile;
+        }
+
+        /// <summary>
+        /// The WebClient_DownloadStringCompleted
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="DownloadStringCompletedEventArgs"/></param>
+        private void WebClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        {
+            VersionContent = e.Result;
+            EvaluateHTML();
+        }
+
+        #endregion
     }
 }

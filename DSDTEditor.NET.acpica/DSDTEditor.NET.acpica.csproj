@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,8 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AcpicaExecute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DSDTEditor.NET.Lib\DSDTEditor.NET.Lib.csproj">
+      <Project>{0220ac37-0146-4144-8ec5-16e0ef9602ab}</Project>
+      <Name>DSDTEditor.NET.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSDTEditor.NET.Shared\DSDTEditor.NET.Shared.csproj">
+      <Project>{7cdf82f9-81be-47be-8aa4-ed2f024397da}</Project>
+      <Name>DSDTEditor.NET.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

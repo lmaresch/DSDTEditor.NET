@@ -7,8 +7,8 @@
     <ProjectGuid>{363B2287-37D5-4417-A89C-981034EA4E77}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DSDTEditor.NET.LibTests2</RootNamespace>
-    <AssemblyName>DSDTEditor.NET.LibTests2</AssemblyName>
+    <RootNamespace>DSDTEditor.NET.LibTests</RootNamespace>
+    <AssemblyName>DSDTEditor.NET.LibTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -57,9 +57,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CheckVersionTests.cs" />
+    <Compile Include="LocalVersionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".DSDTEditor.NET\acpica\iasl-win-20181003.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +81,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
