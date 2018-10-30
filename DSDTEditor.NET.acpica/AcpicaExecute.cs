@@ -53,6 +53,8 @@ namespace DSDTEditor.NET.acpica
                 if (extract)
                     entry.ExtractToFile(destinationFile);
             }
+
+            zipArchive.Dispose();
         }
     }
 }
