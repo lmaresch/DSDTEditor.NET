@@ -13,14 +13,24 @@ namespace DSDTEditor.NET.Lib
     {
         private string name;
         private ObservableCollection<IACPIObject> childs;
+        private ObservableCollection<string> content;
 
-        public Method() => this.childs = new ObservableCollection<IACPIObject>();
+        public Method()
+        {
+            this.childs = new ObservableCollection<IACPIObject>();
+            this.content = new ObservableCollection<string>();
+        }
 
         public string Name { get => this.name; set => this.SetField(ref this.name, value); }
         public ObservableCollection<IACPIObject> Childs { get => this.childs; set => this.SetField(ref this.childs, value); }
         public ACPIObjectTypes ACPIObjectType { get => ACPIObjectTypes.ACPI_TYPE_METHOD; }
 
         public string FullName { get => this.ToString(); }
+        public ObservableCollection<string> Content
+        {
+            get => this.content;
+            set => this.SetField(ref this.content, value);
+        }
 
         public bool FillObject(ref int currentPosition, List<string> fileContent)
         {
@@ -71,7 +81,10 @@ namespace DSDTEditor.NET.Lib
                     if (scope.FillObject(ref currentPosition, fileContent))
                         this.Childs.Add(scope);
                 }
-
+                else
+                {
+                    this.Content.Add(fileContent[currentPosition]);
+                }
 
                 currentPosition++;
             }
