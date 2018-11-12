@@ -19,6 +19,8 @@ namespace DSDTEditor.NET.Lib
         public string Name { get => this.name; set => this.SetField(ref this.name, value); }
         public ObservableCollection<IACPIObject> Childs { get => this.childs; set => this.SetField(ref this.childs, value); }
         public ACPIObjectTypes ACPIObjectType { get => ACPIObjectTypes.ACPI_TYPE_ANY;}
+        public string FullName { get => this.ToString(); }
+
 
         public bool FillObject(ref int currentPosition, List<string> fileContent)
         {
@@ -54,13 +56,18 @@ namespace DSDTEditor.NET.Lib
                     else
                     {
                         table = false;
-                        currentPosition++;
                         break;
                     }
                 }
                 else if (trimmedString.StartsWith("Scope"))
                 {
                     Scope scope = new Scope();
+                    if (scope.FillObject(ref currentPosition, fileContent))
+                        this.Childs.Add(scope);
+                }
+                else if (trimmedString.StartsWith("Method"))
+                {
+                    Method scope = new Method();
                     if (scope.FillObject(ref currentPosition, fileContent))
                         this.Childs.Add(scope);
                 }

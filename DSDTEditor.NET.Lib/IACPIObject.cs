@@ -26,5 +26,10 @@ namespace DSDTEditor.NET.Lib
         {
             get;
         }
+
+        string FullName
+        {
+            get;
+        }
     }
 }

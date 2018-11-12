@@ -29,6 +29,9 @@ namespace DSDTEditor.NET.Lib
         public ObservableCollection<IACPIObject> Childs { get => this.childs; set => this.SetField(ref this.childs, value); }
         public ACPIObjectTypes ACPIObjectType { get => ACPIObjectTypes.ACPI_TYPE_TABLE; }
 
+        public string FullName { get => this.ToString(); }
+
+
         public bool CreateTable(ref int currentPosition, List<string> fileContent, List<string> comments)
         {
             List<string> definition = new List<string>
@@ -69,7 +72,6 @@ namespace DSDTEditor.NET.Lib
                     else
                     {
                         table = false;
-                        currentPosition++;
                         break;
                     }
                 }
@@ -79,12 +81,18 @@ namespace DSDTEditor.NET.Lib
                     if (scope.FillObject(ref currentPosition, fileContent))
                         this.Childs.Add(scope);
                 }
+                else if (trimmedString.StartsWith("Method"))
+                {
+                    Method scope = new Method();
+                    if (scope.FillObject(ref currentPosition, fileContent))
+                        this.Childs.Add(scope);
+                }
 
                 currentPosition++;
             }
             return true;
         }
 
-        public override string ToString() => this.Name;
+        public override string ToString() => "Table " + this.Name;
     }
 }
